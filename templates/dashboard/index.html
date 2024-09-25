@@ -1,0 +1,24 @@
+{% extends 'partials/base.html' %}
+
+{% block content %}
+  {% if user.groups.exists %}
+    {% with user_group=user.groups.first.name %}
+      {% if user_group == 'Farmer' %}
+        {% include 'dashboard/farmer/farmer.html' %}
+      {% elif user_group == 'Aggregator' %}
+        {% include 'dashboard/aggregator/aggregator.html' %}
+      {% elif user_group == 'Processor' %}
+        {% include 'dashboard/processor/processor.html' %}
+      {% elif user_group == 'Distributor' %}
+        {% include 'dashboard/distributor/distributor.html' %}
+      {% elif user_group == 'Retailer' %}
+        {% include 'dashboard/retailer/retailer.html' %}
+      {% else %}
+      <h3>Default</h3>
+      {% endif %}
+    {% endwith %}
+  {% else %}
+    <!--  Handle users not in any group  -->
+    <h1>Final</h1>
+  {% endif %}
+{% endblock %}

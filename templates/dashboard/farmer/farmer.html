@@ -1,0 +1,46 @@
+{% load crispy_forms_tags %}
+
+<div class="container">
+    <div class="row mt-3">
+      <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="{% url 'dashboard-index' %}">Home</a></li>
+        </ol>
+      </nav>
+        <div class="row">
+          <div class="col-md-4 gy-3">
+            <a class="text-decoration-none" href="{% url 'farmer-aggregator' %}">
+              <div class="card">
+                <div class="card-header">Aggregators</div>
+                  <div class="card-body">
+                    <h5 class="card-title text-dark">Aggregator </h5>
+                    <p class="card-text text-dark">Select this option to sell to an aggregator.</p>
+                  </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-4 gy-3">
+            <a class="text-decoration-none" href="{% url 'farmer-processor' %}">
+              <div class="card">
+                <div class="card-header">Processor</div>
+                  <div class="card-body">
+                    <h5 class="card-title text-dark">Processor </h5>
+                    <p class="card-text text-dark">Select this option to sell to an processor.</p>
+                  </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-4 gy-3">
+            <a class="text-decoration-none" href="">
+              <div class="card">
+                <div class="card-header">Transactions</div>
+                  <div class="card-body">
+                    <h5 class="card-title text-dark">Transactions </h5>
+                    <p class="card-text text-dark">Select this option to see to all transactions.</p>
+                  </div>
+              </div>
+            </a>
+          </div>
+        </div>
+    </div>
+</div>

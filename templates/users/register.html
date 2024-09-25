@@ -1,0 +1,23 @@
+{% extends 'partials/base.html' %}
+{% block title%}Register{% endblock%}
+{% load crispy_forms_tags %}
+
+{% block content%}
+<div class="container">
+    <div class="row mt-3">
+        <div class="col-md-6 offset-md-3">
+            <div class="card shadow">
+                <h5 class="mx-4 mt-4">Registration Form</h5>
+                <hr>
+                <form class="m-3" action="" method="POST">
+                    {% csrf_token %}
+                    {{ form|crispy  }}
+                    <input class="btn btn-success" type="submit" value="Register">
+                    <hr>
+                    <span>Already have an account?</span><a href="{% url 'user-login' %}">Login</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock%}
